@@ -1,7 +1,7 @@
 ---
 title: "C++ Compile Optimization 일부분만 해제하는 방법"
 summary: "C++ Compile Optimization 일부분만 해제하는 방법"
-categories: ["Korean_Post", "Programming"]
+categories: ["Korean Post", "Programming"]
 tags: ["C++", "Optimize"]
 date: 2022-04-03
 draft: false

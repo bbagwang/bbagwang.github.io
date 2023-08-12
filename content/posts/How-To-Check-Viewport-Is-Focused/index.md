@@ -1,7 +1,7 @@
 ---
 title: "How To Check Viewport Is Focused"
 summary: "How To Check Viewport Is Focused"
-categories: ["English_Post", "Programming", "UnrealEngine"]
+categories: ["English Post", "Programming", "UnrealEngine"]
 tags: ["C++", "Unreal Engine"]
 date: 2022-03-05
 draft: false

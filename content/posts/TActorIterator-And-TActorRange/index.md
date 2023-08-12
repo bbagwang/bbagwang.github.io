@@ -1,7 +1,7 @@
 ---
 title: "TActorIterator and TActorRange"
 summary: "TActorIterator and TActorRange"
-categories: ["English_Post", "Programming", "UnrealEngine"]
+categories: ["English Post", "Programming", "UnrealEngine"]
 tags: ["C++", "Unreal Engine"]
 date: 2022-04-22
 draft: false

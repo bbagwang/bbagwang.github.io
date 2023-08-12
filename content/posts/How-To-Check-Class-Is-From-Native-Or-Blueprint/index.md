@@ -1,7 +1,7 @@
 ---
 title: "How To Check Class Is From Native Or Blueprint"
 summary: "How To Check Class Is From Native Or Blueprint"
-categories: ["English_Post", "Programming", "UnrealEngine"]
+categories: ["English Post", "Programming", "UnrealEngine"]
 tags: ["C++", "Unreal Engine", "Class"]
 date: 2021-12-12
 draft: false

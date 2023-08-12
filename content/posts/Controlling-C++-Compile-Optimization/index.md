@@ -1,7 +1,7 @@
 ---
 title: "Controlling C++ Compile Optimization"
 summary: "Controlling C++ Compile Optimization"
-categories: ["English_Post", "Programming"]
+categories: ["English Post", "Programming"]
 tags: ["C++"]
 date: 2022-04-03
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: "Game Server Development #2 : Race Condtion, Atomic"
 summary: "Race Condtion, Atomic"
-categories: ["Korean_Post", "Programming"]
+categories: ["Korean Post", "Programming"]
 tags: ["C++", "Server", "Thread", "Atomic"]
 date: 2023-08-11
 draft: false

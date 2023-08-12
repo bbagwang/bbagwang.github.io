@@ -1,7 +1,7 @@
 ---
 title: "언리얼 베테랑의 100가지 팁과 트릭 정리"
 summary: "언리얼 베테랑의 100가지 팁과 트릭 정리"
-categories: ["Korean_Post", "Unreal Engine"]
+categories: ["Korean Post", "Unreal Engine"]
 tags: ["Unreal Engine"]
 date: 2019-06-21
 draft: false

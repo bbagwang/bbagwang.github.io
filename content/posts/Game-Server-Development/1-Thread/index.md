@@ -1,7 +1,7 @@
 ---
 title: "Game Server Development #1 : Introduction, Thread"
 summary: "Introduction & Thread"
-categories: ["Korean_Post", Programming"]
+categories: ["Korean Post", Programming"]
 tags: ["C++", "Server", "Thread"]
 date: 2023-08-08
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: "AWAKE 를 개발하며 고민했던 언리얼 엔진 빌드 타임을 줄이기 위한 시도들 (BUILD TIME KILLER)"
 summary: AWAKE 를 개발하며 고민했던 언리얼 엔진 빌드 타임을 줄이기 위한 시도들 (BUILD TIME KILLER)"
-categories: ["Korean_Post", "Unreal Engine"]
+categories: ["Korean Post", "Unreal Engine"]
 tags: ["Unreal Engine", "Optimize"]
 date: 2019-07-03
 draft: false

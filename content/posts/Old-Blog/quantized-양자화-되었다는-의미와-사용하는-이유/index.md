@@ -1,7 +1,7 @@
 ---
 title: "Quantized (양자화) 되었다는 의미와 사용하는 이유"
 summary: "Quantized (양자화) 되었다는 의미와 사용하는 이유"
-categories: ["Korean_Post", "Unreal Engine", "Programming"]
+categories: ["Korean Post", "Unreal Engine", "Programming"]
 tags: ["Unreal Engine", "Network", "Optimize"]
 date: 2022-04-23
 draft: false

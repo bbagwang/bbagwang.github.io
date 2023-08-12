@@ -1,7 +1,7 @@
 ---
 title: "How To Iterate Over UENUM"
 summary: "Advanced Use of Unreal Engine Enumerator"
-categories: ["English_Post", "Programming", "Unreal Engine"]
+categories: ["English Post", "Programming", "Unreal Engine"]
 tags: ["C++", "Unreal Engine", "Enum"]
 date: 2021-12-11
 draft: false
