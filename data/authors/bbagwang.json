@@ -1,0 +1,18 @@
+{
+    "name": "BBAGWANG",
+    "image": "img/bbagwang.png",
+    "bio": "N00b",
+    "social":
+	[
+        { "email": "mailto:bbagwang@gmail.com" },
+        { "link": "https://bbagwang.com/" },
+        { "discord": "https://discord.gg/tjR4Q5yY4n" },
+        { "facebook": "https://facebook.com/bbagwangs" },
+        { "github": "https://github.com/bbagwang" },
+        { "instagram": "https://instagram.com/bbagwang" },
+        { "linkedin": "https://linkedin.com/in/bbagwang" },
+        { "steam": "https://steamcommunity.com/id/bbagwang/" },
+        { "twitter": "https://twitter.com/bbagwang" },
+        { "youtube": "https://youtube.com/@user-ln4cd6xo1h" }
+	]
+}
