@@ -9,7 +9,7 @@ showauthor: false
 authors:
   - bbagwang
 series: ["Game Server Development"]
-series\_order: 2
+series_order: 2
 ---
 
 ## Material
