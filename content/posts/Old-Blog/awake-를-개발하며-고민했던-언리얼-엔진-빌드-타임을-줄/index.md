@@ -10,7 +10,7 @@ authors:
   - bbagwang
 ---
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Vd_ZtA5lboc?start=1429" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{{< youtube id="Vd_ZtA5lboc?start=1429" >}}
 
 **Unreal Summit 2019 이득우 교수님 세션에도 나왔었다 ㅋㅋㅋㅋㅋㅋㅋㅋ 뿌-듯**
 
