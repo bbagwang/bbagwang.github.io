@@ -36,7 +36,7 @@ void Sub()
 {
 	for (int i = 0; i < 100'0000; ++i)
 	{
-		sum++;
+		sum--;
 	}
 }
 
