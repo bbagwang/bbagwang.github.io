@@ -328,7 +328,13 @@ y = 2;  // 스레드 A
 `CAS` 를 C++ 에서 사용할 때는 다음과 같은 함수가 사용된다.
 
 ```cpp
-std::atomic_compare_exchange_strong(Memory, Expected, Desired); //weak 도 있다.
+template< class T >
+bool atomic_compare_exchange_strong(
+std::atomic<T>* obj,
+typename std::atomic<T>::value_type* expected,
+typename std::atomic<T>::value_type desired ) noexcept;
+
+bool std::atomic_compare_exchange_strong(Memory, Expected, Desired); //weak 도 있다.
 ```
 
 위의 `CAS` 를 의사 코드로 표현해보면 다음과 같다.
@@ -336,10 +342,13 @@ std::atomic_compare_exchange_strong(Memory, Expected, Desired); //weak 도 있�
 ```cpp
 if (Memory == Expected)
 {
-	Memory = Desired;
+  Expected = Memory;
+  Memory = Desired;
+  return true;
 }
 else
 {
-	Expected = Memory;
+  Expected = Memory;
+  return false;
 }
 ```
