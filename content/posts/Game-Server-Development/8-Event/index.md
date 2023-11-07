@@ -124,6 +124,142 @@ DWORD WaitForMultipleObjects(
 
 - `return` : `Wait` 할 이벤트가 `Signaled` 상태가 되면 `WAIT_OBJECT_0` 을 반환한다. `Wait` 시간이 지나면 `WAIT_TIMEOUT` 을 반환한다.
 
+## Behavior of WaitForSingleObject Based on Reset Type
+
+`WaitForSingleObject` 는 `SetEvent`` 가 호출되는 순간 대기중인 모든 상태를 깨울까?
+
+코드를 통해 테스트 해보자.
+
+```cpp
+#include <iostream>
+#include <thread>
+#include <chrono>
+#include <Windows.h>
+
+HANDLE g_handle;
+
+void Signal()
+{
+	::SetEvent(g_handle);
+
+	std::cout << "Signaled!" << std::endl;
+}
+
+void Receiver1()
+{
+	::WaitForSingleObject(g_handle, INFINITE);
+	std::cout << "Receive #1" << std::endl;
+}
+
+void Receiver2()
+{
+	::WaitForSingleObject(g_handle, INFINITE);
+
+	std::cout << "Receive #2" << std::endl;
+}
+
+int main()
+{
+    //Manual Reset 을 FALSE 로 설정하여, Auto Reset 인 경우.
+	g_handle = ::CreateEvent(NULL, FALSE, FALSE, NULL);
+
+	std::thread t1(Signal);
+	std::thread t2(Receiver1);
+	std::thread t3(Receiver2);
+
+	t1.join();
+	t2.join();
+	t3.join();
+
+	::CloseHandle(g_handle);
+
+	return 0;
+}
+```
+
+위 코드의 결과는 다음과 같다.
+
+```
+Signaled!
+Receive #2
+```
+
+여기서 더 이상 실행되지 않는다.
+
+이유는 `Receiver1` 의 `WaitForSingleObject` 가 통과되지 못하였기 때문이다.
+
+그러므로, `t2` 스레드가 대기 상태로 들어가며, `t2.join` 또한 통과되지 못하기 때문이다.
+
+`WaitForSingleObject` 는 `Auto Reset` 하게 된다면, `Signaled` 이후 즉시 `Non-Signaled` 상태로 변경되기 때문에 다른 대기중인 스레드를 깨워주지 않는다.
+
+그렇다면 즉시 `Non-Signaled` 상태로 가지 않도록 `Manual Reset` 으로 하게 된다면 모두 울릴까?
+
+테스트 해보자.
+
+```cpp
+
+#include <iostream>
+#include <thread>
+#include <chrono>
+#include <Windows.h>
+
+HANDLE g_handle;
+
+void Signal()
+{
+	::SetEvent(g_handle);
+
+	std::cout << "Signaled!" << std::endl;
+}
+
+void Receiver1()
+{
+	::WaitForSingleObject(g_handle, INFINITE);
+	std::cout << "Receive #1" << std::endl;
+}
+
+void Receiver2()
+{
+	::WaitForSingleObject(g_handle, INFINITE);
+
+	std::cout << "Receive #2" << std::endl;
+}
+
+int main()
+{
+	g_handle = ::CreateEvent(NULL, TRUE, FALSE, NULL);
+
+	std::thread t1(Signal);
+	std::thread t2(Receiver1);
+	std::thread t3(Receiver2);
+
+	t1.join();
+	t2.join();
+	t3.join();
+
+	::CloseHandle(g_handle);
+
+	return 0;
+}
+
+```
+
+`bManualReset` 을 `TRUE` 로 설정했다.
+
+결과는 다음과 같다.
+
+```
+
+Signaled!
+Receive #1
+Receive #2
+
+```
+
+모두 호출되었다.
+
+다만, 이 경우 `ResetEvent` 를 호출하지 않았으므로, 여전히 `g_handle` 에 대한 `Event` 는 `Signaled` 상태로 유지된다.
+
 ## Problem Example
 
 아래 코드는 `Producer` 스레드가 `Consumer` 스레드에게 데이터를 전달하는 코드이다.
