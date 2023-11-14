@@ -272,7 +272,13 @@ void Push()
 
 이러한 점을 보완하기 위해 `std::unique_lock` 을 사용할 수 있다.
 
-`std::unique_lock` 은 `lock` 함수를 호출하는 순간에 `mutex` 를 획득하려 하기 때문에 시점을 제어할 수 있다.
+`std::unique_lock` 은 원한다면 락을 거는 시점을 조절할 수 있다.
+
+`unique_lock` 을 생성할 때, `std::defer_lock` 을 옵션으로 제공하면, 바로 `mutex` 를 획득하려 하지 않는다.
+
+명시적으로 `lock` 함수를 호출하는 순간에 `mutex` 를 획득한다.
+
+만약 아무 옵션도 없이 그냥 `unique_lock` 을 `mutex` 를 넣어 생성하면, 곧바로 락을 획득한다.
 
 ```cpp
 #include <thread>
@@ -315,7 +321,7 @@ void Push()
 
 **std::unique_lock**
 
-`std::lock_guard` 보다 더 많은 유연성을 제공합니다.
+`std::lock_guard` 보다 더 많은 유연성을 제공한다.
 
 `std::unique_lock`을 사용하면 임의의 위치에서 수동으로 `mutex` 를 잠글 수 있다.
 
