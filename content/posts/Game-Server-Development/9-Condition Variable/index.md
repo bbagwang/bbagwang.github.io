@@ -1,6 +1,6 @@
 ---
 title: "Game Server Development #9 : Condition Variable"
-summary: "Event"
+summary: "Condition Variable"
 categories: ["Korean Post", "Programming"]
 tags: ["C++", "Server", "Thread", "Condition Variable"]
 date: 2023-11-10

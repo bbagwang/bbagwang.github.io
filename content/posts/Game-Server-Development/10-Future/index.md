@@ -1,8 +1,8 @@
 ---
 title: "Game Server Development #10 : Future, Promise, Packaged Task"
-summary: "Event"
+summary: "Future, Promise, Packaged Task"
 categories: ["Korean Post", "Programming"]
-tags: ["C++", "Server", "Thread", "Future"]
+tags: ["C++", "Server", "Thread", "Future", "Promise", "Packaged Task"]
 date: 2024-01-20
 draft: false
 showauthor: false
